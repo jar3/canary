@@ -5,6 +5,7 @@ metadata:
   name: {{ .Release.Name }}-main-servicemonitor
   labels:
     app: {{ .Release.Name }}
+    release: prometheus #se debe agregar para que lo reconozca el collector
 spec:
   selector:
     matchLabels:
@@ -21,6 +22,7 @@ metadata:
   name: {{ .Release.Name }}-canary-servicemonitor
   labels:
     app: {{ .Release.Name }}-canary
+    release: prometheus #se debe agregar para que lo reconozca el collector
 spec:
   selector:
     matchLabels:
